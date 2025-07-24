@@ -60,28 +60,8 @@ anova(newGRIP,ARMGRIP_2)
 
 What this shows is that the sum of errors for the model with just GRIP adds up to 243.07. The sum of errors for the model of both ARM and GRIP adds up 188.43. The difference is greater than before being that it is a 54.64 difference.
 
+```{r}
+anova(newGRIP,simp)
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+While we do not get a p-value from anova since the models aren't nesting, we see that model for ARM has a smaller sum of errors than the model for GRIP.
