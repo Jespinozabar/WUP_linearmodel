@@ -12,20 +12,41 @@ require(tigerstats)
 Data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_strength/data.txt", sep="", header=TRUE)
 ```
 
+```{r}
+simp <- lm(SIMS~ARM,data=Data)
+plot(SIMS~ARM,data=Data)
+abline(simp)
+summary.lm(simp)
+```
 
+```{r}
+target<-data.frame(ARM=88, GRIP=94)
+```
 
+```{r}
+predict(simp,target,interval=c("prediction"))
+```
 
+```{r}
+newGRIP <- lm(SIMS~GRIP,data=Data)
+plot(SIMS~GRIP,data=Data)
+abline(newGRIP)
+summary.lm(newGRIP)
+```
+```{r}
+predict(newGRIP,target,interval=c("prediction"))
+```
 
+```{r}
+ARMGRIP_2 <- lm(SIMS~ARM + GRIP,data=Data)
+summary.lm(ARMGRIP_2)
+```
 
+```{r}
+predict(ARMGRIP_2,target,interval=c("prediction"))
+```
 
-
-
-
-
-
-
-
-
+Now we are going to compare models simp and newGrip using the anova command.
 
 
 
