@@ -48,9 +48,11 @@ predict(ARMGRIP_2,target,interval=c("prediction"))
 
 Now we are going to compare models simp and newGrip using the anova command.
 
+```{r}
+anova(simp,ARMGRIP_2)
+```
 
-
-
+This test is telling us that their is an error that occurs from the with just ARM and it added up to 217.88. The errors in the model with both ARM and GRIP added up to 188.43 showing that there is less errors in the model with both elements rather then the one with just ARM.
 
 
 
